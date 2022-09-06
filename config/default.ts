@@ -2,7 +2,7 @@ export default {
     port: 5000,
     dbUri: "mongodb+srv://Billy08:admin@cluster0.d5dcl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
     saltWorkFactor: 10,
-    accessTokenTtl: '15m',
+    accessTokenTtl: '150m',
     refreshTokenTtl: '1y',
     privateKey: 
 `-----BEGIN RSA PRIVATE KEY-----

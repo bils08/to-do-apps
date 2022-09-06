@@ -28,10 +28,9 @@ export async function createUserSessionHandler(req: Request, res: Response) {
 }
 
 export async function getUserSessionHandler(req: Request, res: Response) {
-    console.log(res.locals);
     const userId = res.locals.user._id
 
-    const session = await findSession({user: userId, valid: false})
+    const session = await findSession({user: userId})
 
     return res.send(session);
 }
@@ -40,8 +39,9 @@ export async function deleteSessionHandler(req: Request, res: Response) {
     const sessionId = res.locals.user.session;
 
     await updateSession ({_id: sessionId}, { valid: false});
-
+    
     return res.send({
+        message: "You are logged out",
         accessToken: null,
         refreshToken: null,
     })

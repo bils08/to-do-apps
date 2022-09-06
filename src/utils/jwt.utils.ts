@@ -7,8 +7,6 @@ const publicKey = config.get<string>('publicKey');
 export function signJwt(
     object: Object, options?: jwt.SignOptions | undefined
 ) {
-    console.log(object);
-    console.log(options);
     return jwt.sign(object, privateKey, {
         ...(options),
         algorithm: 'RS256'
